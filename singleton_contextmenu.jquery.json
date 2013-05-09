@@ -1,0 +1,36 @@
+{
+    "name": "singleton_contextmenu",
+    "version": "1.0.0",
+    
+    "title": "jQuery Singleton Contextmenu",
+    "description": "Create context menus with different content, but at most one shown at a time.",
+    
+    "keywords": [
+        "contextmenu",
+        "menu"
+    ],
+    
+    "dependencies": {
+        "jquery": ">=1.9.1"
+    },
+    
+    "demo": "http://salaj1986.github.io/jquery-singleton-contextmenu/demo.html",
+    
+    "author": {
+        "name": "Oliver Dozsa",
+        "email": "dozsa.oliver@gmail.com",
+        "url": "https://github.com/salaj1986"
+    },
+    
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/salaj1986/jquery-singleton-contextmenu/blob/master/licenses/mit.txt"
+        },
+        
+        {
+            "type": "GPL-2.0",
+            "url": "https://github.com/salaj1986/jquery-singleton-contextmenu/blob/master/licenses/gplv2.txt"
+        }
+    ]
+}
