@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="us">
+  <head>
+		<meta charset="utf-8">
+		<title>Singleton context menu test.</title>
+		
+		<link href="jquery.singleton_contextmenu.css" rel="stylesheet">
+        
+        <style>
+			.demo_box
+            {
+                background-color: #bee57b;
+                
+                border: 3px solid black;
+                
+                width: 100px;
+                height: 100px;
+                
+                font-family: tahoma, arial, sans-serif;
+                font-size: 30px;
+                font-weight: bold;
+                
+                text-align: center;
+            }
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="jquery.singleton_contextmenu.js"></script>
+		
+		<script>
+			$(function()
+			{
+                function attachTo1()
+                {
+                    $("#box_1").singleton_contextmenu
+                    (
+                        {
+                            title: "1's menu",
+                            items:
+                            [
+                                {label: "1's label 1"},
+                                {label: "1's label 2"},
+                                {label: "1's label 3"}
+                            ]
+                        }
+                    );
+                }
+                
+                function attachTo2()
+                {
+                    $("#box_2").singleton_contextmenu
+                    (
+                        {
+                            title: "2's menu",
+                            items:
+                            [
+                                {label: "2's label 1", action: function(){alert("Clicked on 2, label 1");}},
+                                {label: "2's label 2", action: function(){alert("Clicked on 2, label 2");}},
+                                {label: "2's label 3", action: function(){alert("Clicked on 2, label 3");}},
+                            ]
+                        }
+                    );
+                }
+                
+                function attachTo3()
+                {
+                    $("#box_3").singleton_contextmenu
+                    (
+                        {
+                            title: "3's menu",
+                            items:
+                            [
+                                {label: "3's label 1", action: function(data){alert("id = " + data.attr('id'));}, customData: $("#box_1")},
+                                {label: "3's label 2", action: function(data){alert("id = " + data.attr('id'));}, customData: $("#box_2")},
+                                {label: "3's label 3", action: function(data){alert("id = " + data.attr('id'));}, customData: $("#box_3")},
+                            ]
+                        }
+                    );
+                }
+                
+                $("button").css({'position': 'relative', 'z-index': 1});
+                $("h1").css({'position': 'relative', 'z-index': 1});
+                $(".demo_box").css({'position': 'relative', 'z-index': 1});
+                
+                attachTo1();
+                attachTo2();
+                attachTo3();
+                
+                $("#detach_1").css({'z-index': 10}).on('click', function(){$("#box_1").singleton_contextmenu('detach')});
+                $("#detach_2").css({'z-index': 10}).on('click', function(){$("#box_2").singleton_contextmenu('detach')});
+                $("#detach_all").css({'z-index': 10}).on('click', function(){$(".demo_box").singleton_contextmenu('detach')});
+                
+                $("#attach_1").css({'z-index': 10}).on('click', function(){attachTo1();});
+                $("#attach_2").css({'z-index': 10}).on('click', function(){attachTo2();});
+			});
+		</script>
+	</head>
+	
+	<body>
+        <h1>Yet another context menu plugin for jQuery!</h1>
+            <h2>Features:</h2>
+            <ul>
+                <li>Only one context menu is shown at a time.</li>
+                <li>Content can be customized for each context menu.</li>
+                <li>Custom callback data upon clicking.</li>
+            </ul>
+            <p>
+                Right click on any of the green box to show custom context menu. Right clicking on other element will show their default context menu. 
+                Click anwyhere on the white area (either left or right) to make the menu disappear. Left click on the boxes will make the menu disappear.
+                A second right click on the same box will popup the context menu at the clicking position. A second right click on a different box will
+                pop up the context menu for that box.
+            </p>
+        <h1>Simple context menu with no callback on clicking</h1>
+            <div id = "box_1" class = "demo_box">1</div>
+        <h1>Simple context menu with callback</h1>
+            <div id = "box_2" class = "demo_box">2</div>
+        <h1>Simple context menu with custom data for callback</h1>
+            <div id = "box_3" class = "demo_box">3</div>
+        
+        <h1>Detaching</h1>
+        <button id ="detach_1">Click here to detach context menu from 1</button>
+        <button id ="detach_2">Click here to detach context menu from 2</button>
+        <button id ="detach_all">Click here to detach all context menu</button>
+        
+        <h1>Attaching</h1>
+        <button id ="attach_1">Click here to attach to 1</button>
+        <button id ="attach_2">Click here to attach to 2</button>
+	</body>
+</html>
