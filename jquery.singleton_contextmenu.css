@@ -1,0 +1,100 @@
+.singleton_contextmenu_watcher
+{
+    position: absolute;
+}
+
+.singleton_contextmenu_menu
+{
+    padding:          0;
+    margin:           0;
+    
+    background-color: #eeeeee;
+    
+    border:           1px solid #c0c0c0;
+    outline:          1px solid #d1d1d1;
+    
+    position:         absolute;
+    
+    font-family:      tahoma, arial, sans-serif;
+    font-size:        12px;
+    
+    list-style-type:  none;
+}
+
+.singleton_contextmenu_title
+{
+    padding-left:     3px;
+    padding-right:    3px;
+    padding-bottom:   4px;
+    padding-top:      2px;
+    
+    background-image: linear-gradient(bottom, #3F92D2 49%, #66A3D2 77%);
+    background-image: -o-linear-gradient(bottom, #3F92D2 49%, #66A3D2 77%);
+    background-image: -moz-linear-gradient(bottom, #3F92D2 49%, #66A3D2 77%);
+    background-image: -webkit-linear-gradient(bottom, #3F92D2 49%, #66A3D2 77%);
+    background-image: -ms-linear-gradient(bottom, #3F92D2 49%, #66A3D2 77%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.49, #3F92D2),
+        color-stop(0.77, #66A3D2)
+    );
+    
+    color:            #ffffff;
+    
+    display:          block;
+    
+    margin:           2px;
+}
+
+.singleton_contextmenu_menu > li > a
+{
+    padding-left:    13px;
+    padding-right:   2px;
+    padding-bottom:  2px;
+    
+    display:         block;
+    
+    text-decoration: none;
+    
+    cursor:          default;
+    
+    color:           #000000;
+    
+    margin:          2px;
+}
+
+.singleton_contextmenu_menu > li > a:hover
+{
+    background-image: linear-gradient(bottom, #3F92D2 49%, #66A3D2 9%);
+    background-image: -o-linear-gradient(bottom, #3F92D2 49%, #66A3D2 9%);
+    background-image: -moz-linear-gradient(bottom, #3F92D2 49%, #66A3D2 9%);
+    background-image: -webkit-linear-gradient(bottom, #3F92D2 49%, #66A3D2 9%);
+    background-image: -ms-linear-gradient(bottom, #3F92D2 49%, #66A3D2 9%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.49, #3F92D2),
+        color-stop(0.09, #66A3D2)
+    );
+    
+    outline:          1px solid #5c9dc9;
+    
+    margin:           2px;
+    
+    color: #ffffff;
+}
+
+.singleton_contextmenu_removal
+{
+    position: absolute;
+    
+    left:     0;
+    top:      0;
+    width:    100%;
+    height:   100%;
+}
