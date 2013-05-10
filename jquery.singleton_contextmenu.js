@@ -51,9 +51,6 @@
     /* Z index for the menu. */
     var Z_INDEX_MENU = Z_INDEX_WATCHER + 1;
     
-    /* Z index for the element on which the context menu is attached. */
-    var Z_INDEX_ELEMENT = Z_INDEX_WATCHER - 1;
-    
     /* Z index for the context menu removal div. */
     var Z_INDEX_MENU_REMOVAL = Z_INDEX_WATCHER - 10;
     
@@ -228,7 +225,7 @@
                  */
                 removal = $('<div class = "singleton_contextmenu_removal"></div>').appendTo($('body'))
                           /* Set z-index. */
-                          .css({'z-index': Z_INDEX_MENU_REMOVAL})
+                          .css({'z-index': Z_INDEX_MENU_REMOVAL, 'width': $(document).width(), 'height': $(document).height()})
                           /* Set right click handler. */
                           .on('contextmenu.singleton_contextmenu', contextMenuHandler_removal)
                           /* Set left click handler. */
@@ -243,10 +240,7 @@
                     var watcherOfElement = $(this).data('watcher');
                     
                     if(!watcherOfElement)
-                    {
-                        /* Set z-index for the element. */
-                        $(this).css({'z-index': Z_INDEX_ELEMENT});
-                        
+                    {   
                         var watcher = $('<div class = "singleton_contextmenu_watcher"></div>').appendTo($('body'));
                         
                         watcher

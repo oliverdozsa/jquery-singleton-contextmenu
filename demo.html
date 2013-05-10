@@ -22,6 +22,16 @@
                 
                 text-align: center;
             }
+			
+			#box_4
+			{
+				float: right;
+			}
+			
+			.detach
+			{
+				padding-top: 130px;
+			}
 		</style>
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -77,6 +87,22 @@
                         }
                     );
                 }
+				
+				function attachTo4()
+                {
+                    $("#box_4").singleton_contextmenu
+                    (
+                        {
+                            title: "4's menu",
+                            items:
+                            [
+                                {label: "4's label 1"},
+                                {label: "4's label 2"},
+                                {label: "4's label 3"}
+                            ]
+                        }
+                    );
+                }
                 
                 $("button").css({'position': 'relative', 'z-index': 1});
                 $("h1").css({'position': 'relative', 'z-index': 1});
@@ -85,6 +111,7 @@
                 attachTo1();
                 attachTo2();
                 attachTo3();
+				attachTo4();
                 
                 $("#detach_1").css({'z-index': 10}).on('click', function(){$("#box_1").singleton_contextmenu('detach')});
                 $("#detach_2").css({'z-index': 10}).on('click', function(){$("#box_2").singleton_contextmenu('detach')});
@@ -116,8 +143,10 @@
             <div id = "box_2" class = "demo_box">2</div>
         <h1>Simple context menu with custom data for callback</h1>
             <div id = "box_3" class = "demo_box">3</div>
-        
-        <h1>Detaching</h1>
+		<h1>Context menu at right side of page</h1>
+            <div id = "box_4" class = "demo_box">4</div>
+			
+        <h1 class = "detach">Detaching</h1>
         <button id ="detach_1">Click here to detach context menu from 1</button>
         <button id ="detach_2">Click here to detach context menu from 2</button>
         <button id ="detach_all">Click here to detach all context menu</button>
