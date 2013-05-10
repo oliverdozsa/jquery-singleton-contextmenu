@@ -19,6 +19,8 @@
     font-size:        12px;
     
     list-style-type:  none;
+	
+	min-width:        100px;
 }
 
 .singleton_contextmenu_title
@@ -86,7 +88,7 @@
     
     margin:           2px;
     
-    color: #ffffff;
+    color:            #ffffff;
 }
 
 .singleton_contextmenu_removal
@@ -95,6 +97,4 @@
     
     left:     0;
     top:      0;
-    width:    100%;
-    height:   100%;
 }

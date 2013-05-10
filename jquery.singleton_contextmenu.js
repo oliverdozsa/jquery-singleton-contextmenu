@@ -225,7 +225,7 @@
                  */
                 removal = $('<div class = "singleton_contextmenu_removal"></div>').appendTo($('body'))
                           /* Set z-index. */
-                          .css({'z-index': Z_INDEX_MENU_REMOVAL})
+                          .css({'z-index': Z_INDEX_MENU_REMOVAL, 'width': $(document).width(), 'height': $(document).height()})
                           /* Set right click handler. */
                           .on('contextmenu.singleton_contextmenu', contextMenuHandler_removal)
                           /* Set left click handler. */
