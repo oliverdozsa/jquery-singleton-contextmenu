@@ -49,6 +49,8 @@
     display:          block;
     
     margin:           1px;
+    
+    cursor:           default;
 }
 
 .singleton_contextmenu_menu > li > a
