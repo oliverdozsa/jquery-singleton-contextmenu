@@ -6,6 +6,9 @@
  *
  * Dual licensed under the MIT and GPL.
  *
+ * Inspiration from Joe Walnes' simple context menu:
+ * https://github.com/joewalnes/jquery-simple-context-menu
+ *
  */
  
 /* 
